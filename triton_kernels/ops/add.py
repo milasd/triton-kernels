@@ -1,5 +1,5 @@
 """
-Addition operation (m + n).
+Vector addition operation (m + n).
 """
 import torch
 import triton
@@ -57,7 +57,7 @@ def add(x, y) -> torch.Tensor:
     return output
 
 
-def test_add_kernel(size, atol=1e-3, rtol=1e-3, device=DEVICE):
+def test_add_kernel(size: int, atol=1e-3, rtol=1e-3, device=DEVICE):
     torch.manual_seed(42)
     m = torch.randn(size=(size,), device=device)
     n = torch.randn(size=(size,), device=device)
