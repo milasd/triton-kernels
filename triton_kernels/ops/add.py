@@ -36,7 +36,7 @@ def add_kernel(
     
 
 # Prepare the data for adding
-def add(x, y) -> torch.Tensor:
+def add(x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
     # pre-allocate output for inplace update with our kernel.
     output = torch.empty_like(input=x, requires_grad=False)
     
